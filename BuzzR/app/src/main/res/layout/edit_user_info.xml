@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditUserInfoScreen">
+
+    <Button
+        android:id="@+id/editInfoBackBtn"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/back_btn"
+        android:onClick="previousScreen"
+        android:paddingStart="0dp"
+        android:text="@string/backBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/editInfoUserPhoto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="145dp"
+        android:src="@drawable/user_icon"
+        android:transitionName="trialTrans"
+        app:layout_constraintBottom_toTopOf="@+id/editInfoNameInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editInfoBackBtn" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editInfoNameInput"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="#fff"
+        android:hint="Name"
+        app:boxCornerRadiusBottomEnd="0dp"
+        app:boxCornerRadiusBottomStart="0dp"
+        app:boxCornerRadiusTopEnd="0dp"
+        app:boxCornerRadiusTopStart="0dp"
+        app:boxStrokeColor="@color/colorPrimaryDark"
+        app:errorIconTint="@color/customError"
+        app:errorTextColor="@color/customError"
+        app:layout_constraintBottom_toTopOf="@+id/editInfoUsernameInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratmedium"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:paddingTop="12.5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="12.5dp"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editInfoUsernameInput"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="45dp"
+        android:background="#fff"
+        android:hint="Username"
+        app:boxCornerRadiusBottomEnd="0dp"
+        app:boxCornerRadiusBottomStart="0dp"
+        app:boxCornerRadiusTopEnd="0dp"
+        app:boxCornerRadiusTopStart="0dp"
+        app:boxStrokeColor="@color/colorPrimaryDark"
+        app:errorIconTint="@color/customError"
+        app:errorTextColor="@color/customError"
+        app:layout_constraintBottom_toTopOf="@+id/changePhotoBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratmedium"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingTop="12.5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="12.5dp"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/changePhotoBtn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/montserratbold"
+        android:letterSpacing=".1"
+        android:onClick="changePhoto"
+        android:padding="12sp"
+        android:text="Update Photo"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/updateValidationBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:strokeWidth="1.5dp" />
+
+    <Button
+        android:id="@+id/updateValidationBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/montserratbold"
+        android:letterSpacing=".1"
+        android:onClick="validateUser"
+        android:padding="12dp"
+        android:stateListAnimator="@null"
+        android:text="@string/updateInfoBtn"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

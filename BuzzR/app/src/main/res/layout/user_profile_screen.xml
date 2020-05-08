@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfileScreen">
+
+    <Button
+        android:id="@+id/profileBackBtn"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/back_btn"
+        android:fontFamily="@font/montserratbold"
+        android:onClick="trialScreen"
+        android:paddingStart="0dp"
+        android:text="@string/backBtn"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilePhoto"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/user_icon"
+        android:transitionName="trialTrans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileBackBtn" />
+
+    <LinearLayout
+        android:id="@+id/userInfoLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilePhoto">
+
+        <TextView
+            android:id="@+id/profileUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/montserratbold"
+            android:text="Eric Mervin"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/profileUserUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/montserratmedium"
+            android:letterSpacing=".1"
+            android:text="@eric"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/deviceLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userInfoLL">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-3dp"
+            android:fontFamily="@font/montserratsemibold"
+            android:text="Device connected"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <Button
+            android:id="@+id/profileDeviceBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="134dp"
+            android:autoSizeMaxTextSize="44sp"
+            android:autoSizeMinTextSize="14sp"
+            android:autoSizeStepGranularity="2sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/montserratbold"
+            android:letterSpacing="-0.01"
+            android:onClick="openBluetoothScreen"
+            android:padding="30dp"
+            android:text="No Device found"
+            app:strokeColor="@color/colorPrimaryDark"
+            app:strokeWidth="2dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/getHelpLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/trial_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/profileEditInfoBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deviceLL">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/montserratbold"
+            android:letterSpacing=".1"
+            android:text="Get medical help"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratmedium"
+            android:text="In an emergency? We’ll connect you to the nearest hospital"
+            android:textAlignment="center"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/profileEditInfoBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/montserratsemibold"
+        android:onClick="openEditScreen"
+        android:padding="12dp"
+        android:stateListAnimator="@null"
+        android:text="Edit Information"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/profileLogOutBtn"
+        app:layout_constraintEnd_toStartOf="@+id/profileChangePasswordBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/profileChangePasswordBtn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/montserratsemibold"
+        android:onClick="openChangePassword"
+        android:padding="12dp"
+        android:stateListAnimator="@null"
+        android:text="Change Password"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/profileLogOutBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profileEditInfoBtn"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:strokeWidth="1.5dp" />
+
+    <Button
+        android:id="@+id/profileLogOutBtn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/montserratbold"
+        android:onClick="logOutUser"
+        android:padding="12dp"
+        android:text="@string/logOutBtn"
+        android:textColor="@color/customError"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:strokeColor="@color/customError"
+        app:strokeWidth="2dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
